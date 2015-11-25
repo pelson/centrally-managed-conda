@@ -13,7 +13,7 @@ setup(
       packages=['centrally_managed_conda'],
       entry_points={
           'console_scripts': [
-              'fetch-conda-recipes = centrally-managed-conda.fetch_recipes:main',
+              'fetch-conda-recipes = centrally_managed_conda.fetch_recipes:main',
           ]
       },
      )

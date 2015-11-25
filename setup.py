@@ -11,10 +11,5 @@ setup(
       author_email='pelson.pub@gmail.com',
       url='https://github.com/pelson/centrally-managed-conda',
       packages=['centrally_managed_conda'],
-      entry_points={
-          'console_scripts': [
-              'fetch-conda-recipes = centrally_managed_conda.fetch_recipes:main',
-          ]
-      },
      )
 

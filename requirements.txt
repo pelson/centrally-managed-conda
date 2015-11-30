@@ -1,3 +1,4 @@
 conda-build
 gitpython
 conda-build-all
+pyyaml

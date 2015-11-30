@@ -1,0 +1,29 @@
+{% set data = load_setuptools() %}
+
+package:
+    name: centrally-managed-conda
+    version: {{data.get('version')}}
+
+source:
+    path: ../
+
+build:
+    script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+    build:
+        - python
+        - setuptools
+    run:
+        - python
+        - conda-build
+        - gitpython
+        - conda-build-all
+
+test:
+  imports:
+    - centrally_managed_conda
+
+about:
+  license: BSD-3
+  home: https://github.com/pelson/centrally-managed-conda

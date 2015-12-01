@@ -23,6 +23,7 @@ def clean_clone(repo_uri, target, remote_ref='master'):
         repo.head.reference = repo.remotes.origin.refs[remote_ref]
     else:
         repo.git.checkout(remote_ref)
+    repo.head.reset(index=True, working_tree=True)
     repo.git.clean('-xdf')
     return repo
 

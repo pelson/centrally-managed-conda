@@ -25,6 +25,8 @@ def clean_clone(repo_uri, target, remote_ref='master'):
         repo.git.checkout(remote_ref)
     repo.head.reset(index=True, working_tree=True)
     repo.git.clean('-xdf')
+    # Ensure we clone all submodules too.
+    repo.git.submodule('update', '--init')
     return repo
 
 
